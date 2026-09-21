@@ -124,20 +124,6 @@ strong{font-weight:700}
 .nav__cta::after{display:none}
 @media(max-width:820px){.nav__links a:not(.nav__cta){display:none}}
 
-/* ---------- FLOATING SHAPES ---------- */
-.shapes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.shape{position:absolute;border-radius:50%;filter:blur(2px);opacity:.45;animation:drift 18s ease-in-out infinite}
-.shape--1{width:190px;height:190px;background:var(--yellow-soft);top:8%;left:-70px}
-.shape--2{width:120px;height:120px;background:rgba(255,107,94,.35);top:58%;right:-45px;animation-delay:-4s}
-.shape--3{width:80px;height:80px;background:rgba(31,182,166,.3);bottom:12%;left:12%;animation-delay:-8s}
-.shape--4{width:150px;height:150px;background:rgba(155,123,224,.22);top:32%;right:14%;animation-delay:-12s}
-.shape--5{width:60px;height:60px;background:rgba(91,184,232,.35);bottom:32%;right:32%;animation-delay:-6s}
-@keyframes drift{
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(22px,-26px) scale(1.06)}
-  66%{transform:translate(-18px,18px) scale(.96)}
-}
-
 /* ---------- LAYOUT ---------- */
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
 section{position:relative;z-index:1;padding:clamp(44px,6vw,80px) 0}
@@ -198,34 +184,35 @@ section{position:relative;z-index:1;padding:clamp(44px,6vw,80px) 0}
   box-shadow:var(--shadow-sm);border:1px solid var(--line);
   animation:float 7s ease-in-out infinite;
 }
-.hw--1{top:16%;right:6%;transform:rotate(6deg)}
-.hw--2{top:30%;right:22%;animation-delay:-1.4s;background:var(--sky)}
-.hw--3{top:52%;right:5%;animation-delay:-2.8s;background:var(--coral);color:#fff}
-.hw--4{bottom:24%;right:26%;animation-delay:-4.2s;background:var(--teal);color:#fff}
-.hw--5{bottom:14%;right:10%;animation-delay:-5.6s}
-.hw--6{top:9%;left:58%;animation-delay:-3.5s;background:var(--violet);color:#fff}
+.hw--1{top:14%;right:10%;transform:rotate(6deg)}
+.hw--2{top:26%;right:22%;animation-delay:-1.4s;background:var(--sky)}
+.hw--3{top:40%;right:8%;animation-delay:-2.8s;background:var(--coral);color:#fff}
+.hw--4{top:54%;right:20%;animation-delay:-4.2s;background:var(--teal);color:#fff}
+.hw--5{top:68%;right:7%;animation-delay:-5.6s}
+.hw--6{top:80%;right:18%;animation-delay:-3.5s;background:var(--violet);color:#fff}
 @keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
 @media(max-width:900px){
   .hw{font-size:9px;padding:5px 9px}
-  .hw--1{top:12%;right:2%}
-  .hw--2{top:24%;right:8%}
-  .hw--3{top:40%;right:2%}
-  .hw--4{bottom:30%;right:6%}
-  .hw--5{bottom:20%;right:3%}
-  .hw--6{top:16%;left:60%}
+  .hw--1{top:15%;right:4%}
+  .hw--2{top:26%;right:16%}
+  .hw--3{top:38%;right:3%}
+  .hw--4{top:50%;right:14%}
+  .hw--5{top:62%;right:3%}
+  .hw--6{top:74%;right:12%}
 }
 @media(max-width:700px){
   .hero__words{display:none}
 }
 
 /* ---- shelf ---- */
-.shelf{margin-top:40px;position:relative;z-index:1}
+.shelf{width:min(100%,600px);margin:30px auto 0;padding:0 var(--pad);position:relative;z-index:1}
 .shelf__board{
+  position:relative;overflow:hidden;
   display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.5vw,32px);
-  padding:22px clamp(12px,3vw,28px) 0;
-  border-bottom:7px solid var(--ink);border-radius:0 0 var(--r-md) var(--r-md);
-  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0));
+  padding:28px clamp(12px,3vw,28px) 8px;
+  border-radius:var(--r-lg);background:var(--paper);box-shadow:var(--shadow-md);
 }
+.shelf__board::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--ink)}
 .bottle{width:clamp(40px,6.5vw,68px);transition:transform .45s var(--ease)}
 .bottle:hover{transform:translateY(-9px) rotate(-3deg)}
 .bottle__cap{
@@ -653,5 +640,5 @@ section{position:relative;z-index:1;padding:clamp(44px,6vw,80px) 0}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .shape,.hw{animation:none}
+  .hw{animation:none}
 }
