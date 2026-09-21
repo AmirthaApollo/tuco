@@ -1,5 +1,5 @@
 /* ============================================================
-   WHY TUCO SHOULD HIRE ME — interactions
+   WHY TUCO SHOULD HIRE ME / interactions
    ============================================================ */
 (() => {
   "use strict";
@@ -170,7 +170,7 @@
   }
 
   /* ============================================================
-     GROWTH LAB — build a hypothetical experiment
+     GROWTH LAB: build a hypothetical experiment
      ============================================================ */
   const LAB = {
     discover: {
@@ -212,7 +212,7 @@
     if (!d || !t || !c) return;
 
     out.hypothesis.textContent =
-      `If Tuco reaches parents through ${d.phrase}, earns trust with ${t.phrase}, and converts with ${c.phrase} — then more first-time parents will buy, and we'll learn which message actually moves them.`;
+      `If Tuco reaches parents through ${d.phrase}, earns trust with ${t.phrase}, and converts with ${c.phrase}, then more first-time parents should buy, and we'll learn which message moves them.`;
 
     out.test.textContent =
       `Run a 2-week pilot: ${d.test}; ${t.test}; ${c.test}. Keep budget small and isolate one variable per step.`;
@@ -242,7 +242,7 @@
   });
 
   /* ============================================================
-     CONFETTI — celebrate reaching the final pitch
+     CONFETTI: celebrate reaching the final pitch
      ============================================================ */
   const canvas = $("#confetti");
   if (canvas && !prefersReduced) {
